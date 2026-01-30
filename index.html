@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arun Learning</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo" onclick="showBlogList(); filterByMenuId('All')">Arun Learning</div>
+            <div class="header-right">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search blog posts..." id="searchInput">
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div id="blog-list">
+            <div class="category-menu" id="hierarchicalMenu"></div>
+            <div class="blog-grid" id="blogGrid"></div>
+            <div class="no-results" id="noResults" style="display: none;">No blog posts found.</div>
+        </div>
+        
+        <div id="blog-content" class="blog-content">
+            <button class="back-btn" onclick="showBlogList()">← Back to Blog List</button>
+            <div id="content"></div>
+        </div>
+        
+        <div id="not-found" class="not-found" style="display: none;">
+            <div class="not-found-content">
+                <h1>404</h1>
+                <h2 id="not-found-message">Page not found</h2>
+                <p>The page you're looking for doesn't exist.</p>
+                <button class="back-btn" onclick="showBlogList()">← Back to Blog List</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/blogPosts.js"></script>
+    <script src="./assets/js/blog.js"></script>
+</body>
+</html>
