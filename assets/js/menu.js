@@ -44,6 +44,11 @@ const menuStructure = [
                 id: 'SPLUNK',
                 name: 'Splunk',
                 subMenu: []
+            },
+            {
+                id: 'SPARK',
+                name: 'Spark',
+                subMenu: []
             }
         ]
     },

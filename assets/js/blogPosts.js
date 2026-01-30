@@ -5,6 +5,7 @@ const blogPostsData = [
     { menuId: 'BIG_DATA', filePath: 'big-data/starburst.md' },
     { menuId: 'SPLUNK', filePath: 'tools/splunk/push-logs-in-splunk.md' },
     { menuId: 'SPLUNK', filePath: 'tools/splunk/read-splunk-data-using-query.md' },
+    { menuId: 'SPARK', filePath: 'tools/spark/reused-spark-code.md' },
 ];
 
 // Flatten all posts for backward compatibility
