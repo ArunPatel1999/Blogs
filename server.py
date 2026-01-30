@@ -10,6 +10,7 @@ from watchdog.events import FileSystemEventHandler
 
 PORT = 8000
 
+# pip3 install watchdog
 # Store file modification times for hot reload
 file_watcher_clients = []
 

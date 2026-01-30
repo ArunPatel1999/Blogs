@@ -17,8 +17,9 @@ A minimal blog website that reads Markdown files and displays them as web pages.
 
 ## Local Development
 
-1. **Start local server**: Run `python3 server.py`
-2. **View your blog**: Open http://localhost:8000
+1. **Install WatchDog**: Run `pip3 install watchdog`
+2. **Start local server**: Run `python3 server.py`
+3. **View your blog**: Open http://localhost:8000
 
 ## How to Use
 
