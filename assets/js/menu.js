@@ -23,6 +23,11 @@ const menuStructure = [
                         subMenu: []
                     }
                 ]
+            },
+            {
+                id: 'JAVA_EXAMPLE',
+                name: 'Example',
+                subMenu: []
             }
         ]
     },
@@ -33,6 +38,11 @@ const menuStructure = [
             {
                 id: 'DOCKER',
                 name: 'Docker',
+                subMenu: []
+            },
+            {
+                id: 'SPLUNK',
+                name: 'Splunk',
                 subMenu: []
             }
         ]
