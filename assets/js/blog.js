@@ -2,9 +2,12 @@ let allBlogPosts = [];
 let filteredPosts = [];
 let currentCategory = 'All';
 
+// Get base path from current location (e.g., /Blogs or /)
+const basePath = window.location.pathname.split('/')[1] === 'Blogs' ? '/Blogs' : '';
+
 async function loadMarkdown(filename) {
     try {
-        const response = await fetch(`/posts/${filename}`);
+        const response = await fetch(`${basePath}/posts/${filename}`);
         const text = await response.text();
         return marked.parse(text);
     } catch (error) {
@@ -14,7 +17,7 @@ async function loadMarkdown(filename) {
 
 async function loadBlogMeta(filename, category) {
     try {
-        const response = await fetch(`/posts/${filename}`);
+        const response = await fetch(`${basePath}/posts/${filename}`);
         const text = await response.text();
         
         // Check if response is HTML error page
@@ -68,7 +71,7 @@ function showNotFound(message = 'Page not found') {
 
 async function showBlogPost(filename) {
     try {
-        const response = await fetch(`/posts/${filename}`);
+        const response = await fetch(`${basePath}/posts/${filename}`);
         if (!response.ok) {
             showNotFound(`Blog post "${filename}" not found`);
             return;
@@ -262,7 +265,7 @@ function filterByMenuId(menuId) {
     
     // Update URL with hierarchical path
     const menuPath = getMenuPath(menuId);
-    const url = menuPath ? `${window.location.origin}/${menuPath}` : window.location.origin;
+    const url = menuPath ? `${window.location.origin}${basePath}/${menuPath}` : `${window.location.origin}${basePath}`;
     window.history.pushState({ category: menuId }, '', url);
     
     filterPosts(document.getElementById('searchInput').value);
@@ -311,7 +314,11 @@ async function initBlog() {
     renderHierarchicalMenu();
     
     // Check URL path for category
-    const currentPath = window.location.pathname.substring(1); // Remove leading slash
+    let currentPath = window.location.pathname.substring(1); // Remove leading slash
+    // Remove base path if present
+    if (basePath && currentPath.startsWith(basePath.substring(1))) {
+        currentPath = currentPath.substring(basePath.length).replace(/^\//, '');
+    }
     const categoryFromUrl = getMenuIdFromPath(currentPath);
     
     if (currentPath && categoryFromUrl === 'All') {
