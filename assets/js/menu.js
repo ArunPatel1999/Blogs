@@ -36,6 +36,11 @@ const menuStructure = [
                 subMenu: []
             }
         ]
+    },
+    {
+        id: 'BIG_DATA',
+        name: 'Big Data',
+        subMenu: []
     }
 ];
 
