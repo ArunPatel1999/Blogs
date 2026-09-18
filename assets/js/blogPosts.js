@@ -6,6 +6,7 @@ const blogPostsData = [
     { menuId: 'SPLUNK', filePath: 'tools/splunk/push-logs-in-splunk.md' },
     { menuId: 'SPLUNK', filePath: 'tools/splunk/read-splunk-data-using-query.md' },
     { menuId: 'SPARK', filePath: 'tools/spark/reused-spark-code.md' },
+    { menuId: 'VERSION_CONTROL', filePath: 'tools/version-control/git.md' },
 ];
 
 // Flatten all posts for backward compatibility

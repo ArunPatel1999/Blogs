@@ -46,6 +46,11 @@ const menuStructure = [
                 subMenu: []
             },
             {
+                id: 'VERSION_CONTROL',
+                name: 'Git & Hub',
+                subMenu: []
+            },
+            {
                 id: 'SPARK',
                 name: 'Spark',
                 subMenu: []
